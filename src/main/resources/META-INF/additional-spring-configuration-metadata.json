@@ -1,0 +1,13 @@
+{
+  "properties": [
+    {
+      "name": "spring.datasourse.username",
+      "type": "java.lang.String",
+      "description": "Description for spring.datasourse.username."
+    },
+    {
+      "name": "spring.datasourse.username",
+      "type": "java.lang.String",
+      "description": "Description for spring.datasourse.username."
+    }
+  ] }

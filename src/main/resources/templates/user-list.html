@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="UTF-8">
+  <title>Users-ХУЮЗЕРС</title>
+
+
+</head>
+<body>
+<div th:switch="${users}">
+  <h2 th:case="null">No users found!</h2>
+  <div th:case="*">
+    <h2>Users-ХУЮЗЕРС</h2>
+    <table>
+      <thead>
+      <tr>
+        <th>Id</th>
+        <th>First name</th>
+        <th>Last name</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr th:each="user : ${users}">
+        <td th:text="${user.id}"></td>
+        <td th:text="${user.firstName}"></td>
+        <td th:text="${user.lastName}"></td>
+
+
+        <!--<td><a th:href="@{user-update/{id}(id=${user.id})}">Edit</a></td>
+        <td><a th:href="@{user-delete/{id}(id=${user.id})}">Delete</a >-->
+
+
+        <td><a th:href="@{user-update/{id}(id=${user.id})}">Edit</a></td>
+        <td><a th:href="@{user-delete/{id}(id=${user.id})}">Delete</a ></td>
+
+      </tr>
+      </tbody>
+    </table>
+
+
+  </div>
+<!--  <p><a href="/user-create">Create user</a></p>-->
+<!--  <p><a href="/exportCSV">Download .csv-file</a></p>-->
+
+
+  <button class="custom-btn btnCreateUser" onclick="window.location.href = '/user-create';"> Create user </button>
+
+  <button class="custom-btn btnDownloadCSV" onclick="window.location.href = '/exportCSV';"> Download .csv-file </button>
+
+
+  <style>
+    .btnDownloadCSV {
+      background-color: #4CAF50;
+      border: none;
+      color: white;
+      padding: 15px 32px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      margin: 4px 2px;
+      cursor: pointer;
+    }
+
+
+    .btnCreateUser {
+      background-color: #c999ef;
+      border: none;
+      color: white;
+      padding: 15px 32px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      margin: 4px 2px;
+      cursor: pointer;
+    }
+
+
+  </style>
+
+
+
+
+</div>
+</body>
+</html>
